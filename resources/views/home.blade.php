@@ -39,21 +39,12 @@
         </div>
 
         <div class="task_list">
-            @php
-                $tasks = [
-                    ['done' => false, 'title' => 'Minha primeira task', 'category' => 'Categoria 1', 'delete_url' => 'https://google.com.br', 'edit_url' => 'https://b7web.com.br'],
-                    ['done' => true, 'title' => 'Minha segunda task', 'category' => 'Categoria 2', 'delete_url' => 'https://google.com.br', 'edit_url' => 'https://b7web.com.br'],
-                    ['id' => 3, 'done' => false, 'title' => 'Minha terceira task', 'category' => 'Categoria 1', 'delete_url' => 'https://google.com.br', 'edit_url' => 'https://b7web.com.br'],
-                ] 
-
-            @endphp
+            
+            @foreach($tasks as $task)
             <x-task 
-                :data=$tasks[0]
+                :data=$task
             />
-
-            <x-task 
-                :data=$tasks[1]
-            />
+            @endforeach
 
         </div>
     </section>
